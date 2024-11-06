@@ -3,7 +3,7 @@
 #### Data Preprocessing
 
 1. **Categorical Variables**:
-   - Features like `SeniorCitizen` have discrete values, which could be treated as categorical rather than continuous. This enhances the interpretability of the model.
+   - Features like `SeniorCitizen` have discrete values, which could be treated as categorical rather than continuous, enhancing the interpretability of the model.
    - For columns with "No internet service" values (e.g., `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`), these were standardized to "No" for simplicity and consistency.
 
 2. **Skewness in Charges Columns**:
@@ -29,7 +29,7 @@ Using SHAP values and feature importance from a RandomForest model, the followin
 
 5. **Paperless Billing**: This was linked to a higher churn rate, possibly because these customers are more tech-savvy and price-sensitive.
 
-# Recommendations for Reducing Customer Churn
+### Recommendations for Reducing Customer Churn
 
 1. **Encourage Long-Term Contracts**: 
    - Incentivize month-to-month customers to switch to one- or two-year contracts with discounts or added benefits to improve retention.
@@ -47,4 +47,3 @@ Using SHAP values and feature importance from a RandomForest model, the followin
    - Offer minor incentives for choosing paperless billing, as customers using this method may be more price-sensitive and tech-oriented, thus requiring more engagement.
 
 By addressing these key drivers of churn, the company can enhance customer satisfaction, promote loyalty, and reduce overall churn rates.
-
