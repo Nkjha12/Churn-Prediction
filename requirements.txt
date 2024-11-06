@@ -1,4 +1,6 @@
 pandas
+seaborn
 uvicorn
 fastapi
 scikit-learn
+xgboost
