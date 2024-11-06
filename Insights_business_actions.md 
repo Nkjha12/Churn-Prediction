@@ -1,0 +1,50 @@
+### Summary Report of Findings and Recommendations
+
+#### Data Preprocessing
+
+1. **Categorical Variables**:
+   - Features like `SeniorCitizen` have discrete values, which could be treated as categorical rather than continuous. This enhances the interpretability of the model.
+   - For columns with "No internet service" values (e.g., `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`), these were standardized to "No" for simplicity and consistency.
+
+2. **Skewness in Charges Columns**:
+   - Both `MonthlyCharges` and `TotalCharges` are right-skewed. Transformations (e.g., log, square root) were suggested to make these columns more normally distributed, potentially improving model accuracy.
+
+3. **Tenure Binning**:
+   - `Tenure` data showed patterns that allowed for binning into categories such as "New," "Short-term," "Mid-term," and "Long-term" customers. This binning helps capture customer loyalty and retention trends.
+
+4. **Feature Correlation**:
+   - `TotalCharges` and `tenure` were found to be highly correlated, which could lead to redundancy. One of these features could be excluded if it does not add unique value to the model.
+
+#### Model Insights and Feature Importance
+
+Using SHAP values and feature importance from a RandomForest model, the following features were identified as the most impactful:
+
+1. **Contract Type (Month-to-month)**: Month-to-month contracts were highly associated with churn, indicating that customers with no long-term commitment are more likely to leave.
+
+2. **Internet Service Type (Fiber optic)**: Customers with fiber optic services showed higher churn, possibly due to pricing or service quality concerns.
+
+3. **Tenure Category**: Mid-tenure customers were identified as more likely to churn, suggesting a need for engagement strategies targeting this group.
+
+4. **OnlineSecurity and TechSupport**: Lack of these services was associated with increased churn, indicating that customers may value security and technical support options.
+
+5. **Paperless Billing**: This was linked to a higher churn rate, possibly because these customers are more tech-savvy and price-sensitive.
+
+# Recommendations for Reducing Customer Churn
+
+1. **Encourage Long-Term Contracts**: 
+   - Incentivize month-to-month customers to switch to one- or two-year contracts with discounts or added benefits to improve retention.
+
+2. **Improve Fiber Optic Service**:
+   - Address pricing and quality issues with fiber optic services, as dissatisfaction in this area appears to be a key driver of churn.
+
+3. **Engage Mid-Tenure Customers**:
+   - Implement loyalty programs or special offers targeting customers with 1-2 years of tenure to prevent churn before they reach the high-risk period.
+
+4. **Bundle Security and Support Services**:
+   - Create affordable bundles that include online security and tech support to improve customer satisfaction and reduce churn for those lacking these services.
+
+5. **Reward Paperless Billing**:
+   - Offer minor incentives for choosing paperless billing, as customers using this method may be more price-sensitive and tech-oriented, thus requiring more engagement.
+
+By addressing these key drivers of churn, the company can enhance customer satisfaction, promote loyalty, and reduce overall churn rates.
+
